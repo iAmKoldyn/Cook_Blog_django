@@ -1,4 +1,4 @@
-#!/home/iamkoldyn/Cook_Blog_django/env/bin/python
+#!/home/iamkoldyn/Cook_Blog_django/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
