@@ -10,8 +10,4 @@ pytest==6.2.5
 pre-commit==2.15.0
 wemake-python-styleguide==0.15.3
 django-debug-toolbar==3.2.4
-<<<<<<< HEAD
-django-ckeditor 6.3.0
-=======
 django-ckeditor==6.3.0
->>>>>>> f9a1a9c191e11ff9c510e3a1dfd4860f2026571a
