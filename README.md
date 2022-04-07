@@ -3,7 +3,7 @@
 
 
 ### Описание проекта:
-Блог шеф-повара с рецептами
+Тут будет описание 
 
 ![cook_blog](screenshots/cook_blog2.png)
 ![cook_blog](screenshots/cook_blog.png)
@@ -13,4 +13,4 @@
 **Стек:**
 - Python >= 3.9
 - Django >= 3
-- sqlite3
+- sqlite3 #будет портирован на sql
