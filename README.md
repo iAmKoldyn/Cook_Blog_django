@@ -7,8 +7,6 @@
 
 
 ![LOGO](screenshots/ubuntu.png)
-![LOGO](screenshots/ubuntu.png)
-![LOGO](screenshots/ubuntu.png)
 
 
 
