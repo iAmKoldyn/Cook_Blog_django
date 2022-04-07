@@ -11,7 +11,7 @@ class PhotoAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
     def get_image(self, obj):
-        return mark_safe(f'<img src={obj.image.url} width="110" height="80"')
+        return mark_safe(f'<img src={obj.image.url} width="110" height="80">')
 
 
 @admin.register(Gallery)
