@@ -6,7 +6,7 @@
 Блог шеф-повара с рецептами
 
 
-![LOGO](изображения/cook_blog1.png)
+![LOGO](screenshots/cook_blog1.png)
 
 
 
