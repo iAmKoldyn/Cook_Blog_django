@@ -6,13 +6,9 @@
 Блог шеф-повара с рецептами
 
 
-<<<<<<< HEAD
-=======
-![screenshots/cook_blog1.png](screenshots/cook_blog1.png)
+![alt text](screenshots/cook_blog1.png)
 
 
-
->>>>>>> f9a1a9c191e11ff9c510e3a1dfd4860f2026571a
 ### Инструменты разработки
 
 **Стек:**
