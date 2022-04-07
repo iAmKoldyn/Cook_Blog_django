@@ -5,7 +5,7 @@
 ### Описание проекта:
 Блог шеф-повара с рецептами
 
-
+![cook_blog](screenshots/cook_blog2.png)
 ![cook_blog](screenshots/cook_blog.png)
 
 ### Инструменты разработки
