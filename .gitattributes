@@ -4,6 +4,6 @@ jquery.js linguist-vendored=false
 *.css linguist-language=Python
 static/* linguist-vendored
 jquery.js linguist-vendored=false
-*.sass linguist-language=Python
+*.scss linguist-language=Python
 static/* linguist-vendored
 jquery.js linguist-vendored=false
