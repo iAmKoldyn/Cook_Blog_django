@@ -81,9 +81,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cook-blog_db',
+        'USER': 'app',
+        'PASSWORD': '75yu4375',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
