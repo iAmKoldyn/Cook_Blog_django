@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 from mptt.models import MPTTModel, TreeForeignKey
-
+#для обхода бинарныйх деревьевь добавить TreeForeignKey
 
 class Category(MPTTModel):
     name = models.CharField(max_length=100)
