@@ -39,11 +39,11 @@
           <div class="col-lg-6 col-md-6">
             <div class="contact__form">
               <div class="contact__form__title">
-                <h2>gET IN TOUCH</h2>
-                <p>My experience with Realy is absolutely positive. The themes are beautifully
+                <h2>Обратная связь</h2>
+                <p>.</p>
+             My experience with Realy is absolutely positive. The themes are beautifully
                   designed
-                  and well documented. Realy theme provides quick support.</p>
-              </div>
+                  and well documented. Realy theme provides quick support </div>
               <form action="{% url 'feedback' %}" method="post">
 {#                <input type="text" placeholder="Name">#}
 {#                <input type="text" placeholder="Email">#}
@@ -51,7 +51,7 @@
 {#                <textarea placeholder="Message"></textarea>#}
                 {% csrf_token %}
                 {{ form }}
-                <button type="submit" class="site-btn">Submit</button>
+                <button type="submit" class="site-btn">Отправить</button>
               </form>
             </div>
           </div>

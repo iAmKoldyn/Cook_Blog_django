@@ -6,17 +6,17 @@
   <div class="sidebar__item">
     <div class="sidebar__about__item">
       <div class="sidebar__item__title">
-        <h6>About me</h6>
+        <h6>Обо Мне</h6>
       </div>
       {% get_about as about %}
       <img src="{{ about.get_first_image }}" alt="">
-      <h6>Hi every one! I,m <span>{{ about.name }}</span></h6>
+      <h6>О, привет! Меня зовут <span>{{ about.name }}</span></h6>
       <p>{{ about.mini_text|safe }}</p>
-      <a href="{% url 'about' %}" class="primary-btn">Read more</a>
+      <a href="{% url 'about' %}" class="primary-btn">Показать больше</a>
     </div>
     <div class="sidebar__follow__item">
       <div class="sidebar__item__title">
-        <h6>Follow me</h6>
+        <h6>Подписаться</h6>
       </div>
       {% get_social_links as social_links %}
       <div class="sidebar__item__follow__links">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="sidebar__item__banner">
-      <img src="/static/img/sidebar/banner.jpg" alt="">
+      <img src="/static/img/sidebar/banner[2].jpg" alt="">
     </div>
     <div class="sidebar__item__categories">
       <div class="sidebar__item__title">
@@ -37,17 +37,17 @@
     </div>
     <div class="sidebar__subscribe__item">
       <div class="sidebar__item__title">
-        <h6>Subscribe</h6>
+        <h6>Подписаться</h6>
       </div>
-      <p>Subscribe to our newsletter and get our newest updates right on your inbox.</p>
+      <p>Подпишитесь на нашу рассылку и получайте последние обновления прямо на свою почту.</p>
       <form action="#">
         <input type="text" class="email-input" placeholder="Your email">
         <label for="s-agree-check">
-          I agree to the terms & conditions
+          Я согласен с правилами и условиями
           <input type="checkbox" id="s-agree-check">
           <span class="checkmark"></span>
         </label>
-        <button type="submit" class="site-btn">Subscribe</button>
+        <button type="submit" class="site-btn">Подписка</button>
       </form>
     </div>
   </div>
