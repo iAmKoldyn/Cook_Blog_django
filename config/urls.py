@@ -1,5 +1,6 @@
 """cook URL Configuration
 """
+from blog import views
 import debug_toolbar
 from django.conf import settings
 from django.conf.urls.static import static
@@ -14,6 +15,7 @@ urlpatterns = [
     path("__debug__/", include(debug_toolbar.urls)),
     path("", include("contact.urls")),
     path("", include("blog.urls")),
+    # path('map/', views.mapbox_map, name='main'),
 ]
 
 if settings.DEBUG:

@@ -12,9 +12,7 @@ class RecipeInline(admin.StackedInline):
 @admin.register(models.Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ["title", "category", "author", "create_at", "id"]
-    prepopulated_fields = {
-        "slug": ("title", "category"),
-    }
+    prepopulated_fields = {'slug': ('title', 'category'), }
     inlines = [RecipeInline]
     save_as = True
     save_on_top = True
@@ -27,7 +25,7 @@ class RecipeAdmin(admin.ModelAdmin):
 
 @admin.register(models.Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ["name", "email", "website", "create_at", "id"]
+    list_display = ['name', 'email', 'website', 'create_at', 'id']
 
 
 admin.site.register(models.Category, MPTTModelAdmin)
