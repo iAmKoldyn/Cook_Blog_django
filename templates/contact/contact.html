@@ -46,6 +46,11 @@
                 {% for contact in contacts %}
                   <li>
 {#                    <i class="fa fa-map-marker"></i>#}
+                  <style type="text/css">
+                    .contact_icon {
+                      margin-top: 10px;
+                    }
+                    </style>
                     <img class="contact_icon" src="{{ contact.icon.url }}">
                     <span>{{ contact.name }}</span>
                   </li>
@@ -57,6 +62,12 @@
             <div class="contact__form">
               <div class="contact__form__title">
                 <h2>Обратная связь</h2>
+                <style type="text/css">
+                  .contact__form {
+                    margin-left:150px;
+                    margin-top: -350px;
+                  }
+                  </style>
               <form action="{% url 'feedback' %}" method="post">
 {#                <input type="text" placeholder="Name">#}
 {#                <input type="text" placeholder="Email">#}

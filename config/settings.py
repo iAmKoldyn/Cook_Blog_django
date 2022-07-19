@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "debug_toolbar",
     "mptt",
     "ckeditor",
@@ -87,25 +88,14 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cook-blog_db',
-        'USER': 'app',
-        'PASSWORD': '75yu4375',
-        'HOST': 'localhost',
-        'PORT': '45678',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('DB_PORT'),
+        'OPTIONS': {'options': '-c search_path=public,content'}
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-# 'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USER'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
-#         'PORT': os.environ.get('DB_PORT', DEFAULT_PORT),
-#         'OPTIONS': {'options': '-c search_path=public,content'}
-#     }
-# }
 
 
 
@@ -157,9 +147,9 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 INTERNAL_IPS = "127.0.0.1"
 
 
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
-        "LOCATION": os.path.join(BASE_DIR, "cache"),
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+#         "LOCATION": os.path.join(BASE_DIR, "cache"),
+#     }
+# }

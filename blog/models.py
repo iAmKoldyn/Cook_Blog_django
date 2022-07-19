@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 from mptt.models import MPTTModel, TreeForeignKey
+from django.utils.timezone import now
 
 
 class Category(MPTTModel):
@@ -94,8 +95,34 @@ class Comment(models.Model):
 
 
 
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=10, null=True, blank=True)
 
+    def __str__(self):
+        return str(self.user)
 
+class Order(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+    date_ordered = models.DateTimeField(default=now)
+    complete = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.id)
+
+    @property
+    def get_cart_total(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.get_total for item in orderitems])
+        return total
+
+    @property
+    def get_cart_items(self):
+        orderitems = self.orderitem_set.all()
+        total = sum([item.quantity for item in orderitems])
+        return total
 
 
 
