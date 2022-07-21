@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "blog",
     "contact",
     "gallery",
+    'django_filters',
     # "maps",
 ]
 

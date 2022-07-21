@@ -51,9 +51,9 @@ class Social(models.Model):
     link = models.URLField()
 
 
-
-
-
+class Order(models.Model):
+    """ Класс модели регистрации """
+    STATUS = ()
 
 
 
