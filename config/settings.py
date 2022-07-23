@@ -144,6 +144,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+LOGIN_REDIRECT_URL = "/"
+
 
 INTERNAL_IPS = "127.0.0.1"
 
