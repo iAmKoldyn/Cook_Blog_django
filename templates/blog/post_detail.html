@@ -156,7 +156,40 @@
               </div>
               {#                            <textarea placeholder="Message"></textarea>#}
               {{ form.message }}
+              
+              {% if user.is_authenticated %}
               <button type="submit" class="site-btn">Отправить</button>
+              {% else %}
+              <head>
+                <meta charset="utf-8">
+                <style type="text/css">
+                .level1 { font-size: 1em; }
+                .level2 { font-size: 1.2em; }
+                .level3 { font-size: 1.4em; }
+                .level4 { font-size: 1.6em; }
+                .level5 { font-size: 1.8em; }
+                .level6 { font-size: 2em; }
+                A.nagibator { 
+                  font-size: 15px;  
+                  color: #ffffff;
+                  font-weight: 800;
+                  text-transform: uppercase;
+                  display: inline-block;
+                  padding: 14px 390px 16px;
+                  background: #f4952f;
+                  border: none;
+                  margin-left: -1px;
+                  margin-right: -106px;
+                  width: 76em;
+                              }
+                    </style>
+                  </head> 
+                  <body>
+                    <div> 
+                      <a href="{% url 'login' %}" class="nagibator">Войдите чтобы оставлять комментарий</a>
+                    </div>
+                  </body>
+        {% endif %}
             </form>
           </div>
         </div>
@@ -165,3 +198,5 @@
   </section>
 
 {% endblock content %}
+
+<!-- <a href="{% url 'login' %}">или Войдите</a> -->

@@ -188,6 +188,16 @@ ol {
   border: none;
 }
 
+.nagibator {
+  font-size: 15px;
+  color: $white-color;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 13px 26px 12px;
+  background: $primary-color;
+  border: none;
+}
 /* Preloder */
 #preloder {
   position: fixed;
