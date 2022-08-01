@@ -2,11 +2,12 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-
-
-from .models import Post, Comment
+from rest_framework import permissions
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, ListAPIView
+from .models import *
 from .forms import CommentForm
 from .inherit import cartData
+from .serializers import *
 
 
 class HomeView(ListView):
@@ -123,3 +124,171 @@ def Logout(request):
     logout(request)
     alert = True
     return render(request, "index.html", {'alert':alert})
+
+
+    # rest
+
+
+class CategoryList(ListAPIView):
+    model = Category
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class CategoryCreate(CreateAPIView):
+    model = Category
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class CategoryDetail(RetrieveAPIView):
+    model = Category
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+
+class CategoryUpdate(UpdateAPIView):
+    model = Category
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class CategoryDelete(DestroyAPIView):
+    model = Category
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class TagList(ListAPIView):
+    model = Tag
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+
+class TagCreate(CreateAPIView):
+    model = Tag
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class TagDetail(RetrieveAPIView):
+    model = Tag
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+
+class TagUpdate(UpdateAPIView):
+    model = Tag
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class TagDelete(DestroyAPIView):
+    model = Tag
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class PostList(ListAPIView):
+    model = Post
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+class PostCreate(CreateAPIView):
+    model = Post
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class PostDetail(RetrieveAPIView):
+    model = Post
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+class PostUpdate(UpdateAPIView):
+    model = Post
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class PostDelete(DestroyAPIView):
+    model = Post
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class RecipeList(ListAPIView):
+    model = Recipe
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+
+
+class RecipeCreate(CreateAPIView):
+    model = Recipe
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class RecipeDetail(RetrieveAPIView):
+    model = Recipe
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+
+
+class RecipeUpdate(UpdateAPIView):
+    model = Recipe
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class RecipeDelete(DestroyAPIView):
+    model = Recipe
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class CommentList(ListAPIView):
+    model = Comment
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+
+class CommentCreate(CreateAPIView):
+    model = Comment
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class CommentDetail(RetrieveAPIView):
+    model = Comment
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+
+
+class CommentUpdate(UpdateAPIView):
+    model = Comment
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    # permission_classes = [permissions.IsAuthenticated]
+
+
+class CommentDelete(DestroyAPIView):
+    model = Comment
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    # permission_classes = [permissions.IsAuthenticated]

@@ -15,6 +15,7 @@ urlpatterns = [
     path("__debug__/", include(debug_toolbar.urls)),
     path("", include("contact.urls")),
     path("", include("blog.urls")),
+    path("", include("gallery.urls")),
     # path('map/', views.mapbox_map, name='main'),
 ]
 
