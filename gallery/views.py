@@ -1,12 +1,5 @@
-from django.shortcuts import render, redirect
-from django.views import View
-from django.contrib import messages
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, ListAPIView
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from .models import *
-from rest_framework import generics, permissions
+from .models import Gallery, Photo
 from .serializers import *
 
 
@@ -27,7 +20,6 @@ class GalleryDetail(RetrieveAPIView):
     model = Gallery
     queryset = Gallery.objects.all()
     serializer_class = GallerySerializer
-
 
 
 class GalleryUpdate(UpdateAPIView):

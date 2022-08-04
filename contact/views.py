@@ -2,17 +2,12 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import CreateView
 from django.contrib import messages
-import django_filters 
-from rest_framework import permissions
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, ListAPIView
 from .models import *
 from .forms import ContactForm
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
 from .models import *
-from .forms import OrderForm, CreateUserForm
-from .filters import OrderFilter    
+from .forms import CreateUserForm
 from .serializers import *
 
 

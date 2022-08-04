@@ -2,11 +2,9 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from rest_framework import permissions
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, ListAPIView
 from .models import *
 from .forms import CommentForm
-from .inherit import cartData
 from .serializers import *
 
 
@@ -47,37 +45,29 @@ class CreateComment(CreateView):
         return self.object.post.get_absolute_url()
 
 
-
-
-
-
-
-
-
-
-def change_password(request):
-    if not request.user.is_authenticated:
-        return redirect('/login')
-    data = cartData(request)
-    items = data['items']
-    order = data['order']
-    cartItems = data['cartItems']
-    if request.method == "POST":
-        current_password = request.POST['current_password']
-        new_password = request.POST['new_password']
-        try:
-            u = User.objects.get(id=request.user.id)
-            if u.check_password(current_password):
-                u.set_password(new_password)
-                u.save()
-                alert = True
-                return render(request, "change_password.html", {'alert':alert})
-            else:
-                currpasswrong = True
-                return render(request, "change_password.html", {'currpasswrong':currpasswrong})
-        except:
-            pass
-    return render(request, "change_password.html", {'cartItems':cartItems})
+# def change_password(request):
+#     if not request.user.is_authenticated:
+#         return redirect('/login')
+#     data = cartData(request)
+#     items = data['items']
+#     order = data['order']
+#     cartItems = data['cartItems']
+#     if request.method == "POST":
+#         current_password = request.POST['current_password']
+#         new_password = request.POST['new_password']
+#         try:
+#             u = User.objects.get(id=request.user.id)
+#             if u.check_password(current_password):
+#                 u.set_password(new_password)
+#                 u.save()
+#                 alert = True
+#                 return render(request, "change_password.html", {'alert':alert})
+#             else:
+#                 currpasswrong = True
+#                 return render(request, "change_password.html", {'currpasswrong':currpasswrong})
+#         except:
+#             pass
+#     return render(request, "change_password.html", {'cartItems':cartItems})
 
 
 def register(request):
