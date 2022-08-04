@@ -6,7 +6,7 @@ from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIVie
 from .models import *
 from .forms import CommentForm
 from .serializers import *
-
+from rest_framework import permissions
 
 class HomeView(ListView):
     model = Post
@@ -129,7 +129,7 @@ class CategoryCreate(CreateAPIView):
     model = Category
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class CategoryDetail(RetrieveAPIView):
@@ -142,14 +142,14 @@ class CategoryUpdate(UpdateAPIView):
     model = Category
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class CategoryDelete(DestroyAPIView):
     model = Category
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class TagList(ListAPIView):
@@ -162,7 +162,7 @@ class TagCreate(CreateAPIView):
     model = Tag
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class TagDetail(RetrieveAPIView):
@@ -175,14 +175,14 @@ class TagUpdate(UpdateAPIView):
     model = Tag
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class TagDelete(DestroyAPIView):
     model = Tag
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class PostList(ListAPIView):
@@ -195,7 +195,7 @@ class PostCreate(CreateAPIView):
     model = Post
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class PostDetail(RetrieveAPIView):
@@ -208,14 +208,14 @@ class PostUpdate(UpdateAPIView):
     model = Post
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class PostDelete(DestroyAPIView):
     model = Post
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class RecipeList(ListAPIView):
@@ -228,7 +228,7 @@ class RecipeCreate(CreateAPIView):
     model = Recipe
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class RecipeDetail(RetrieveAPIView):
@@ -241,14 +241,14 @@ class RecipeUpdate(UpdateAPIView):
     model = Recipe
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class RecipeDelete(DestroyAPIView):
     model = Recipe
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class CommentList(ListAPIView):
@@ -261,7 +261,7 @@ class CommentCreate(CreateAPIView):
     model = Comment
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class CommentDetail(RetrieveAPIView):
@@ -274,11 +274,11 @@ class CommentUpdate(UpdateAPIView):
     model = Comment
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class CommentDelete(DestroyAPIView):
     model = Comment
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
