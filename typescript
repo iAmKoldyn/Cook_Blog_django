@@ -1,0 +1,96 @@
+Script started on 2022-08-13 23:26:59+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="182" LINES="13"]
+]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ ^C
+]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ docker-compose up -ds[C[C[Cp[C[C[C[Kdocker-compose up -ds[C[C[Cjava factorial.Factorial [6@c factorial/Factorial.java[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kchmod a+x script.sh
+]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ ./script.sh
+/home/iamkoldyn/.local/lib/python3.8/site-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.11) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Creating test database for alias 'default'...
+FF
+======================================================================
+FAIL: test_gallery (gallery.test_models.TestGalleryModel)
+Creates new Gallery and tests its attributes.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/iamkoldyn/Cook_Blog_django/gallery/test_models.py", line 33, in test_gallery
+    self.assertEqual(getattr(gallery, attr), init_kwargs[attr])
+AssertionError: datetime.datetime(2022, 8, 13, 20, 28, 9, 671111, tzinfo=<UTC>) != datetime.datetime(2022, 8, 13, 20, 28, 9, 670932, tzinfo=<UTC>)
+
+======================================================================
+FAIL: test_photo (gallery.test_models.TestPhotoModel)
+Creates new Gallery and tests its attributes.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/iamkoldyn/Cook_Blog_django/gallery/test_models.py", line 18, in test_photo
+    self.assertEqual(getattr(photo, attr), init_kwargs[attr])
+AssertionError: datetime.datetime(2022, 8, 13, 20, 28, 9, 679374, tzinfo=<UTC>) != datetime.datetime(2022, 8, 13, 20, 28, 9, 678946, tzinfo=<UTC>)
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.013s
+
+FAILED (failures=2)
+Destroying test database for alias 'default'...
+grep: 1: Нет такого файла или каталога
+]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ ^C
+]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ зн[K[Kpytest
+[1m================================================================================ test session starts =================================================================================[0m
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+rootdir: /home/iamkoldyn/Cook_Blog_django, configfile: pytest.ini
+plugins: Faker-13.3.0, cov-3.0.0, xdist-2.5.0, forked-1.4.0, celery-4.3.0
+[1mcollecting ... [0m[1mcollected 0 items / 1 error                                                                                                                                                          [0m
+
+======================================================================================= ERRORS =======================================================================================
+[31m[1m______________________________________________________________________ ERROR collecting gallery/test_models.py _______________________________________________________________________[0m
+[1m[31mgallery/test_models.py[0m:2: in <module>
+    [94mfrom[39;49;00m [04m[96m.[39;49;00m[04m[96mmodels[39;49;00m [94mimport[39;49;00m Photo, Gallery
+[1m[31mgallery/models.py[0m:4: in <module>
+    [94mclass[39;49;00m [04m[92mPhoto[39;49;00m(models.Model):
+[1m[31m../.local/lib/python3.8/site-packages/django/db/models/base.py[0m:108: in __new__
+    app_config = apps.get_containing_app_config(module)
+[1m[31m../.local/lib/python3.8/site-packages/django/apps/registry.py[0m:253: in get_containing_app_config
+    [96mself[39;49;00m.check_apps_ready()
+[1m[31m../.local/lib/python3.8/site-packages/django/apps/registry.py[0m:135: in check_apps_ready
+    settings.INSTALLED_APPS
+[1m[31m../.local/lib/python3.8/site-packages/django/conf/__init__.py[0m:82: in __getattr__
+    [96mself[39;49;00m._setup(name)
+[1m[31m../.local/lib/python3.8/site-packages/django/conf/__init__.py[0m:63: in _setup
+    [94mraise[39;49;00m ImproperlyConfigured(
+[1m[31mE   django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.[0m
+[33m================================================================================== warnings summary ==================================================================================[0m
+../.local/lib/python3.8/site-packages/_pytest/config/__init__.py:1233
+  /home/iamkoldyn/.local/lib/python3.8/site-packages/_pytest/config/__init__.py:1233: PytestConfigWarning: Unknown config option: DJANGO_SETTINGS_MODULE
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+============================================================================== short test summary info ===============================================================================
+ERROR gallery/test_models.py - django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environme...
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[31m============================================================================ [33m1 warning[0m, [31m[1m1 error[0m[31m in 0.30s[0m[31m =============================================================================[0m
+]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ clear
+[H[2J[3J]0;iamkoldyn@bebra: ~/Cook_Blog_django[01;32miamkoldyn@bebra[00m:[01;34m~/Cook_Blog_django[00m$ clearpytest./script.sh
+/home/iamkoldyn/.local/lib/python3.8/site-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.11) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+Creating test database for alias 'default'...
+FF
+======================================================================
+FAIL: test_gallery (gallery.test_models.TestGalleryModel)
+Creates new Gallery and tests its attributes.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/iamkoldyn/Cook_Blog_django/gallery/test_models.py", line 33, in test_gallery
+    self.assertEqual(getattr(gallery, attr), init_kwargs[attr])
+AssertionError: datetime.datetime(2022, 8, 13, 20, 28, 36, 853358, tzinfo=<UTC>) != datetime.datetime(2022, 8, 13, 20, 28, 36, 853183, tzinfo=<UTC>)
+
+======================================================================
+FAIL: test_photo (gallery.test_models.TestPhotoModel)
+Creates new Gallery and tests its attributes.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/iamkoldyn/Cook_Blog_django/gallery/test_models.py", line 18, in test_photo
+    self.assertEqual(getattr(photo, attr), init_kwargs[attr])
+AssertionError: datetime.datetime(2022, 8, 13, 20, 28, 36, 862616, tzinfo=<UTC>) != datetime.datetime(2022, 8, 13, 20, 28, 36, 862256, tzinfo=<UTC>)
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.013s
+
+FAILED (failures

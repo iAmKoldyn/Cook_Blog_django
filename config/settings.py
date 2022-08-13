@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "mptt",
     "ckeditor",
-    "blog",
-    "contact",
-    "gallery",
+    "blog.apps.BlogConfig",
+    "contact.apps.ContactConfig",
+    "gallery.apps.GalleryConfig",
     'django_filters',
     # "maps",
 ]

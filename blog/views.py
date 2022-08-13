@@ -79,7 +79,6 @@ def register(request):
             full_name=request.POST['full_name']
             password1 = request.POST['password1']
             password2 = request.POST['password2']
-            phone_number = request.POST['phone_number']
             email = request.POST['email']
 
             if password1 != password2:
@@ -87,7 +86,7 @@ def register(request):
                 return render(request, "register.html", {'alert':alert})
             
             user = User.objects.create_user(username=username, password=password1, email=email)
-            customers = Customer.objects.create(user=user, name=full_name, phone_number=phone_number, email=email)
+            customers = Customer.objects.create(user=user, name=full_name, email=email)
             user.save()
             customers.save()
             return render(request, "login.html")
