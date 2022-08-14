@@ -1,6 +1,3 @@
-
-
-
 {% load social_tags cache %}
 
 {% cache 5000 header %}
@@ -18,72 +15,6 @@
         <div class="col-lg-8 col-md-10 order-md-2 order-3">
           {% include 'blog/include/top_nav.html' %}
         <div class="col-lg-2 col-md-1 col-6 order-md-3 order-2">
-        </div>
-
-        {% if user.is_authenticated %}
-        <head>
-          <meta charset="utf-8">
-          <style>
-            .login { 
-              font-size: 15px;
-              color: #111111;
-              font-weight: 700;
-              text-transform: uppercase;
-              font-family: "Unna", serif;
-              padding: 5px 15px 5px;
-              border: none;
-              margin-left: 1px;
-              -webkit-transition: all 0.3s;
-              -o-transition: all 0.3s;
-              transition: all 0.3s;
-              position: relative;
-              border: none;
-              margin-right: -29px;
-            }
-          </style> 
-         </head>
-         <body>
-        <div> 
-          <span class="login">Здравствуй! {{request.user}}</span>
-          <a href="{% url 'logout' %}" class="login">Выход</a>
-        </div>
-      </body>
-      {% else %}
-      <head>
-       <meta charset="utf-8">
-       <style type="text/css">
-        A.tag-level6 { 
-
-          font-size: 15px;
-          color: #000000;
-          font-weight: 800;
-          text-transform: uppercase;
-          padding: 5px 15px 5px;
-          background: #f4952f;
-          border: none;
-          margin-left: 942px;
-          margin-right: -9px;
-
-        }
-        A.tag-level7{
-          font-size: 15px;
-          color: #000000;
-          font-weight: 800;
-          text-transform: uppercase;
-          padding: 5px 15px 5px;
-          background: #f4952f;
-          border: none;
-          margin-left: -419px;
-        
-        }
-       </style>
-      </head> 
-      <body>
-          <div>
-            <a href="{% url 'register' %}" class="tag-level6">Регистрация</a>|<a href="{% url 'login' %}" class="tag-level7">Войти</a>
-          </div>
-        {% endif %}
-        </button> 
         <div class="collapse navbar-collapse" id="navbarNav">
         </div>
         </div>
