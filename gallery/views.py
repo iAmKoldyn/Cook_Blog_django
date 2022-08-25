@@ -15,7 +15,7 @@ class GalleryCreate(CreateAPIView):
     model = Gallery
     queryset = Gallery.objects.all()
     serializer_class = GallerySerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class GalleryDetail(RetrieveAPIView):
@@ -28,14 +28,14 @@ class GalleryUpdate(UpdateAPIView):
     model = Gallery
     queryset = Gallery.objects.all()
     serializer_class = GallerySerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class GalleryDelete(DestroyAPIView):
     model = Gallery
     queryset = Gallery.objects.all()
     serializer_class = GallerySerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class PhotoList(ListAPIView):
@@ -48,7 +48,7 @@ class PhotoCreate(CreateAPIView):
     model = Photo
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class PhotoDetail(RetrieveAPIView):
@@ -61,11 +61,11 @@ class PhotoUpdate(UpdateAPIView):
     model = Photo
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class PhotoDelete(DestroyAPIView):
     model = Photo
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]

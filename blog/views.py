@@ -8,6 +8,7 @@ from .forms import CommentForm
 from .serializers import *
 from rest_framework import permissions
 
+
 class HomeView(ListView):
     model = Post
     paginate_by = 9
@@ -43,31 +44,6 @@ class CreateComment(CreateView):
 
     def get_success_url(self):
         return self.object.post.get_absolute_url()
-
-
-# def change_password(request):
-#     if not request.user.is_authenticated:
-#         return redirect('/login')
-#     data = cartData(request)
-#     items = data['items']
-#     order = data['order']
-#     cartItems = data['cartItems']
-#     if request.method == "POST":
-#         current_password = request.POST['current_password']
-#         new_password = request.POST['new_password']
-#         try:
-#             u = User.objects.get(id=request.user.id)
-#             if u.check_password(current_password):
-#                 u.set_password(new_password)
-#                 u.save()
-#                 alert = True
-#                 return render(request, "change_password.html", {'alert':alert})
-#             else:
-#                 currpasswrong = True
-#                 return render(request, "change_password.html", {'currpasswrong':currpasswrong})
-#         except:
-#             pass
-#     return render(request, "change_password.html", {'cartItems':cartItems})
 
 
 def register(request):
@@ -116,7 +92,7 @@ def Logout(request):
     return render(request, "index.html", {'alert':alert})
 
 
-    # rest
+# rest
 
 
 class CategoryList(ListAPIView):

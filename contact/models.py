@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from ckeditor.fields import RichTextField
 from django.db import models
 

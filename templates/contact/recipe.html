@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recipe</title>
+
+
+    <div class="text">  
+        <h1>Предложите свой уникальный рецепт</h1>
+        <style>
+            .text{
+                font-size: 15px;
+                color: #ffffff;
+                font-weight: 800;
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 1px 572px 1px;
+                background: #f4952f;
+                border: none;
+                        text-align: center;
+        
+                }
+        </style>
+
+        {% if user.is_authenticated %}
+        <ul>
+            <a href="/"class="main">Главная</a> 
+            <a class="greeting">Здравствуй! {{request.user}}</a>
+            <a href="{% url 'logout' %}"class="logout">Выход</a>
+        </ul>
+        <style>
+            .main{
+                font-size: 15px;
+                color: #111111;
+                font-weight: 700;
+                font-family: "Unna", serif;
+                text-transform: uppercase;
+                -webkit-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+                position: relative;
+                padding: 10px 0;
+                display: block;
+            }
+            .logout{
+                font-size: 15px;
+                color: #111111;
+                font-weight: 700;
+                font-family: "Unna", serif;
+                text-transform: uppercase;
+                -webkit-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+                position: relative;
+                padding: 10px 0;
+                display: block;
+            }
+            .greeting {
+                font-size: 15px;
+                  color: #111111;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  font-family: "Unna", serif;
+                  padding: 5px 15px 5px;
+                  border: none;
+                  margin-left: 1px;
+                  -webkit-transition: all 0.3s;
+                  -o-transition: all 0.3s;
+                  transition: all 0.3s;
+                  position: relative;
+                  border: none;
+                  margin-right: -29px;
+            }
+        </style>
+    </div>
+    
+
+        <!--    <form name="form" onsubmit="FormSubmit()">-->
+                    <input  className="form-control"
+                        id="name" placeholder="name" type="text" name='name' onChange='this.changeHandler'/>
+                    <label>Название блюда</label>
+                    <!-- </div> -->
+            <div>
+                <input className="form-control"
+                        placeholder="serves" id='serves' onChange='this.changeHandler'/>
+                    <label htmlFor="floatingPassword">Служит в качестве</label>
+            </div>
+                <input className="form-control"
+                        type="number" id='perp' />
+                    <label htmlFor="floatingPassword">Общее время готовки</label>
+            </div>
+            <div>
+                <input className="form-control"
+                        type="number" id='cook' />
+                    <label htmlFor="floatingPassword">Время приготовленя блюда</label>
+            </div>
+            <div>
+                <input className="form-control"
+                        placeholder="Ingredients" id='ingredients' />
+                    <label htmlFor="floatingPassword">Ингредиеты</label>
+            </div>
+            <div>
+                <input className="form-control"
+                        placeholder="Directions" id='directions' />
+                    <label htmlFor="floatingPassword">Шаги приготовления</label>
+            </div>
+
+                <button id="submit">Отправить</button>
+        <!--    </form>-->
+            <script type="text/javascript">
+                let submit = document.getElementById('submit')
+                submit.addEventListener('click',
+                function FormSubmit(event){
+                    event.preventDefault()
+                    const state = {
+                        name: document.getElementById('name').value,
+                        serves: document.getElementById('serves').value,
+                        ingredients: document.getElementById('ingredients').value,
+                        directions: document.getElementById('directions').value,
+                        prep_time: document.getElementById('perp').value,
+                        cook_time: document.getElementById('cook').value,
+                    }
+                    console.log(state)
+                    fetch('http://127.0.0.1:8000/recipe/create', {
+                        method:"POST",
+                        headers : {'Content-type': 'application/json'},
+                        body:JSON.stringify(state),
+                    })
+                        .then(response => {
+                            const json = response.json();
+                            console.log(json)
+                        })
+
+                        .catch(err => {console.error(err)})
+
+                })
+
+            </script>
+
+
+        {% else %}
+    <div class="text2">    
+        <h1>Функция доступна только авторизованным пользователям</h1>
+        <style>
+            .text2 { 
+                font-size: 15px;
+                color: #111111;
+                text-transform: uppercase;
+                padding: 1px 10px 1px;
+                text-align: center;
+            }
+            </style>
+    </div>
+    <style>
+        .text2 { 
+            font-size: 15px;
+            color: #111111;
+            text-transform: uppercase;
+            padding: 1px 10px 1px;
+            text-align: center;
+        }
+        .rec { 
+            font-size: 15px;
+            color: #111111;
+            font-weight: 700;
+            font-family: "Unna", serif;
+            text-transform: uppercase;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            padding: 10px 0;
+            display: block;
+        }
+    </style>    
+
+<a href="{% url 'register' %}"class="rec">Регистрация</a>
+<a href="{% url 'login' %}"class="rec">Войти</a>
+{% endif %}

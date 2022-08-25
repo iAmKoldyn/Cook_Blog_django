@@ -9,6 +9,7 @@
     <li><a href="{% url 'about' %}">О нас</a></li>
     <li><a href="{% url 'contact' %}">Контакты</a></li>
     {% if user.is_authenticated %}
+    <li><a href="{% url 'recipe' %}">Предложить рецепт</a></li>
     <li><a class="Greeting">Здравствуй! {{request.user}}</a></li>
     <li><a href="{% url 'logout' %}">Выход</a></li>
     {% else %}
