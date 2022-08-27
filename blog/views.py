@@ -2,11 +2,11 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from rest_framework import permissions
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, ListAPIView
 from .models import *
 from .forms import CommentForm
 from .serializers import *
-from rest_framework import permissions
 
 
 class HomeView(ListView):
@@ -204,7 +204,7 @@ class RecipeCreate(CreateAPIView):
     model = Recipe
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
 
 class RecipeDetail(RetrieveAPIView):
