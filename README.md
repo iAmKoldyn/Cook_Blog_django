@@ -6,12 +6,6 @@
 
 https://user-images.githubusercontent.com/91592995/187047565-1f536511-0fc1-4194-a9de-430ed1e53703.mp4
 
-
-
-
-
-![cook_blog]()
-![cook_blog]()
 ### Инструменты разработки
 
 **Стек:**
