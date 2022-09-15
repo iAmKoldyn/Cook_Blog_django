@@ -102,16 +102,3 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Комментарии'
         verbose_name_plural = 'Комментарии'
-
-
-class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,verbose_name='Пользователь')
-    name = models.CharField(max_length=100,verbose_name='Имя')
-    email = models.CharField(max_length=100,verbose_name='Почта')
-
-    def __str__(self):
-        return str(self.user)
-
-    class Meta:
-        verbose_name = 'Относится к регистрации'
-        verbose_name_plural = 'Относится к регистрации'
